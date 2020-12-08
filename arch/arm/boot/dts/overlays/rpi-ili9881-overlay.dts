@@ -3,6 +3,8 @@
  *
  */
 
+#include <dt-bindings/gpio/gpio.h>
+
 /dts-v1/;
 /plugin/;
 
