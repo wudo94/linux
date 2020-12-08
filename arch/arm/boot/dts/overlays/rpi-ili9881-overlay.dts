@@ -25,12 +25,26 @@
 
 			panel@0 {
 				compatible = "powertip,ph720128t003";
+				pinctrl-names = "default";
+				pinctrl-0 = <&rpi_display_pins>;
 				reg = <0>;
+				reset-gpios = <&gpio 4 0>;
 				port {
 					panel_dsi_port: endpoint {
 						remote-endpoint = <&dsi_out_port>;
 					};
 				};
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&gpio>;
+		__overlay__ {
+			rpi_display_pins: rpi_display_pins {
+				brcm,pins = <4>;
+				brcm,function = <1>; /* out */
+				brcm,pull = <2>; /* up */
 			};
 		};
 	};
