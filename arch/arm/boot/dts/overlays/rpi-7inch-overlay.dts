@@ -34,8 +34,8 @@
 				compatible = "i2c-gpio";
 				#address-cells = <1>;
 				#size-cells = <0>;
-				gpios = <&gpio 28 0
-					&gpio 29 0>;
+				gpios = <&gpio 0 0
+					&gpio 1 0>;
 
 				lcd@45 {
 					compatible = "raspberrypi,7inch-touchscreen-panel";
