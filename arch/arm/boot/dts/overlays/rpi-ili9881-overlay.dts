@@ -28,7 +28,7 @@
 				pinctrl-names = "default";
 				pinctrl-0 = <&rpi_display_pins>;
 				reg = <0>;
-				reset-gpios = <&gpio 4 0>;
+				reset-gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
 				port {
 					panel_dsi_port: endpoint {
 						remote-endpoint = <&dsi_out_port>;
