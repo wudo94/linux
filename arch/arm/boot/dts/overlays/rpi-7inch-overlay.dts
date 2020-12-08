@@ -1,0 +1,53 @@
+/*
+ * Device Tree overlay for RaspberryPi PowerTip DSI panel
+ *
+ */
+
+#include <dt-bindings/gpio/gpio.h>
+
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+
+	fragment@0 {
+		target = <&dsi1>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			power-domains = <&power 18>;
+			status = "okay";
+
+			port {
+				dsi_out_port: endpoint {
+					remote-endpoint = <&panel_dsi_port>;
+				};
+			};
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+		__overlay__ {
+			i2c_dsi: i2c {
+				compatible = "i2c-gpio";
+				#address-cells = <1>;
+				#size-cells = <0>;
+				gpios = <&gpio 28 0
+					&gpio 29 0>;
+
+				lcd@45 {
+					compatible = "raspberrypi,7inch-touchscreen-panel";
+					reg = <0x45>;
+
+					port {
+						panel_dsi_port: endpoint {
+							remote-endpoint = <&dsi_out_port>;
+						};
+					};
+				};
+			};
+		};
+	};
+};

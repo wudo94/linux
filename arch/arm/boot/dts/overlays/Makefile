@@ -135,6 +135,7 @@ dtbo-$(CONFIG_ARCH_BCM2835) += \
 	rpi-display.dtbo \
 	rpi-ft5406.dtbo \
 	rpi-ili9881.dtbo \
+	rpi-7inch.dtbo \
 	rpi-poe.dtbo \
 	rpi-proto.dtbo \
 	rpi-sense.dtbo \
