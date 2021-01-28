@@ -642,8 +642,8 @@ static const struct ili9881c_instr ph720128t003_init[] = {
 	ILI9881C_COMMAND_INSTR(0xD1, 0x56),
 	ILI9881C_COMMAND_INSTR(0xD2, 0x66),
 	ILI9881C_COMMAND_INSTR(0xD3, 0x39),
-	ILI9881C_SWITCH_PAGE_INSTR(0),
-	ILI9881C_COMMAND_INSTR(0x11, 0x00),
+	//ILI9881C_SWITCH_PAGE_INSTR(0),
+	//ILI9881C_COMMAND_INSTR(0x11, 0x00),
 };
 
 static inline struct ili9881c *panel_to_ili9881c(struct drm_panel *panel)
